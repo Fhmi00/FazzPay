@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { FiGrid, FiArrowUp, FiPlus, FiUser, FiLogOut } from "react-icons/fi";
 
 export default function Side() {
@@ -7,11 +8,15 @@ export default function Side() {
       <div className="d-flex flex-column gap-5">
         <div className="d-flex flex-row align-items-center mt-3 gap-3">
           <FiGrid />
-          <span>Dashboard</span>
+          <span>
+            <Link href="/dashboard">Dashboard</Link>
+          </span>
         </div>
         <div className="d-flex flex-row align-items-center gap-3">
           <FiArrowUp />
-          <span>Transfer</span>
+          <span>
+            <Link href="transfer/select-receiver">Transfer</Link>
+          </span>
         </div>
         <div className="d-flex flex-row align-items-center gap-3">
           <FiPlus />
