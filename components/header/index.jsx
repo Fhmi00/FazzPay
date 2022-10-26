@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <div className="container-fluid">
       <div className="row">
-        <div className="col-12 border d-flex flex-row justify-content-between px-5 py-4 rounded-bottom">
+        <div className="col-12 shadow d-flex flex-row justify-content-between px-5 py-4 rounded-bottom">
           <span className="ms-5">FazzPay</span>
           <div className="d-flex flex-row me-5">
             <Image src="/robert.png" width={50} height={50} alt="rob"></Image>
