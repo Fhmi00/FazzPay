@@ -70,7 +70,9 @@ export default function Login() {
                 <Link href="/">Forgot password?</Link>
               </p>
               <div className="d-grid">
-                <button className="btn btn-primary auth-btn">Login</button>
+                <button className="btn btn-primary auth-btn">
+                  <Link href="/create-pin">Login</Link>{" "}
+                </button>
               </div>
               <div className="text-center">
                 <p className="auth-right-last">

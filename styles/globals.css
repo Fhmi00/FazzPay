@@ -10,6 +10,8 @@ a {
   font-family: "Nunito Sans";
 }
 
+/* START OF AUTH */
+
 .auth-left-background {
   background: rgba(7, 173, 76, 0.921);
 }
@@ -147,11 +149,169 @@ a {
 .auth-btn-pin {
   background: #dadada;
   border: unset;
+  width: 425px;
 }
 
 .auth-btn-pin:hover {
   background: rgba(7, 173, 76, 0.921);
-  width: 200px;
+}
+
+/* END OF AUTH */
+
+/* START OF HEADER */
+
+.header-logo {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 29px;
+  line-height: 40px;
+  color: rgba(7, 173, 76, 0.921);
+}
+
+.header-bell {
+  width: 25px;
+  height: 25px;
+}
+
+.header-name {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 31px;
+}
+
+.header-telpnumb {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 24px;
+
+  color: rgba(58, 61, 66, 0.9);
+}
+
+/* END OF HEADER */
+
+/* START OF SIDE BAR */
+
+.sidebar-nav {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 31px;
+
+  color: rgba(58, 61, 66, 0.8);
+}
+
+/* END OF SIDE BAR */
+
+/* START OF FOOTER */
+
+.footer-wrapper {
+  background: rgba(7, 173, 76, 0.921);
+}
+
+.footer-copyright {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  color: rgba(239, 239, 239, 0.9);
+}
+
+.footer-contact {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 28px;
+  color: #efefef;
+}
+
+/* END OF FOOTER */
+
+/* START OF DASHBOARD */
+
+.dashboard-balance {
+  background: rgba(7, 173, 76, 0.921);
+  border-radius: 15px;
+}
+
+.dashboard-balance-balance {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 31px;
+  color: #e0e0e0;
+}
+
+.dashboard-balance-amount {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 55px;
+  color: #ffffff;
+}
+
+.dashboard-balance-telpnumb {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  color: #dfdcdc;
+}
+
+.btn-dashboard-balance {
+  background: rgba(76, 224, 138, 0.921);
+  border: 1px solid white;
+}
+
+.dashboard-logo-income {
+  color: rgb(5, 156, 5);
+  font-size: 25px;
+}
+
+.dashboard-logo-expense {
+  font-size: 25px;
+  color: rgb(255, 40, 40);
+}
+
+.dashboard-income {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #6a6a6a;
+}
+
+.dashboard-income-value {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 25px;
+  color: #3a3d42;
+}
+
+.dashboard-history {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 25px;
+  color: #3a3d42;
+}
+
+.dashboard-transaction-name {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  color: #4d4b57;
+}
+
+.dashboard-transaction-type {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  color: #7a7886;
 }
 
 @media (prefers-color-scheme: dark) {

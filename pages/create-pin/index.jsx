@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function CreatePin() {
   return (
@@ -64,7 +65,9 @@ export default function CreatePin() {
                   <input maxlength="1" type="text" className="auth-input-pin" />
                 </div>
               </div>
-              <button className="btn auth-btn-pin">Confirm</button>
+              <button className="btn auth-btn-pin">
+                <Link href="/dashboard">Confirm</Link>{" "}
+              </button>
             </div>
           </section>
         </div>
