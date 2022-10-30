@@ -8,15 +8,18 @@ import { FiMail, FiLock, FiUser } from "react-icons/fi";
 
 export default function Signup() {
   const router = useRouter();
-  const [form, setForm] = useState({});
+  const [form, setForm] = useState({
+    firstName : "",
+    lastName : "",
+    email : "",
+    password : "",
+  });
 
   const handleSubmit = async () => {
     try {
       const result = await axiosClient.post("/auth/register", form);
-      // menjalankan get user by id dan menyimpan datanya ke redux
       Cookies.set("token", result.data.data.token);
       Cookies.set("userId", result.data.data.id);
-      //   proses kondisi pengecekan pin jika ada akan diarahkan ke home jika tidak ada akan diarahkan ke create pin
       router.push("/signin");
       console.log(result);
     } catch (error) {

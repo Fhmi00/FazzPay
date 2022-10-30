@@ -4,8 +4,19 @@ import Header from "components/header";
 import Side from "components/side";
 import Footer from "components/footer";
 import Dropdown from "react-bootstrap/Dropdown";
+import { getDataUser } from "stores/actions/user";
+import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
 
 export default function History() {
+  const data = useSelector((state) => state.data);
+  const dispatch = useDispatch();
+  const [user, setUser] = useState();
+
+  const getData = () => {
+    
+  }
+
   return (
     <>
       <Header />

@@ -5,9 +5,33 @@ import InputGroup from "react-bootstrap/InputGroup";
 import Header from "components/header";
 import Footer from "components/footer";
 import Side from "components/side";
+import ReceiverCard from "components/transfer/receiverCard";
 import { FiSearch } from "react-icons/fi";
+import { getAllUser } from "stores/actions/user";
+import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
+import { useEffect } from "react";
 
 export default function SelectReceiver() {
+  // const data = useSelector((state) => state.data);
+  const dispatch = useDispatch();
+  const [data, setData] = useState();
+
+  const getData = () => {
+    try {
+      dispatch(getAllUser())
+      .then ((response) => setData(response.value.data.data))
+      .catch ((error) => console.log(error))
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+    getData()
+  }, [])
+  // console.log(user);
+
   return (
     <>
       <Header />
@@ -24,21 +48,18 @@ export default function SelectReceiver() {
                 aria-describedby="basic-addon1"
               />
             </InputGroup>
-            <div className="d-flex flex-row justify-content-between align-items-center me-5 mt-4">
-              <div className="d-flex gap-3">
-                <Image
-                  src="/robert.png"
-                  width={50}
-                  height={50}
-                  alt="rob"
-                ></Image>
-                <div className="d-flex flex-column">
-                  <span>Robert Chandler</span>
-                  <span>+62 8139 3877 7946</span>
+
+            {data.length > 0 ? (
+              data.map((item)=> (
+                <div key={item.id}>
+                  <ReceiverCard data={item}/>
                 </div>
+              ))
+            ):(
+              <div>
+                <span>data not found</span>
               </div>
-              <span>+Rp50.000</span>
-            </div>
+            )}
           </div>
         </div>
       </div>
