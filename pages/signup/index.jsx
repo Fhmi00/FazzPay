@@ -1,9 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
+import axiosClient from "utils/axios";
+import Cookies from "js-cookie";
+import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
 import { FiMail, FiLock, FiUser } from "react-icons/fi";
 
 export default function Signup() {
+  const router = useRouter();
+  const [form, setForm] = useState({});
+
+  const handleSubmit = async () => {
+    try {
+      const result = await axiosClient.post("/auth/register", form);
+      // menjalankan get user by id dan menyimpan datanya ke redux
+      Cookies.set("token", result.data.data.token);
+      Cookies.set("userId", result.data.data.id);
+      //   proses kondisi pengecekan pin jika ada akan diarahkan ke home jika tidak ada akan diarahkan ke create pin
+      router.push("/signin");
+      console.log(result);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleChangeText = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
   return (
     <>
       <div className="container-fluid">
@@ -54,6 +78,8 @@ export default function Signup() {
                   type="text"
                   className="form-control auth-input"
                   placeholder="Enter your firstname"
+                  name="firstName"
+                  onChange={handleChangeText}
                 />
               </div>
               <div className="input-group flex-nowrap">
@@ -64,6 +90,8 @@ export default function Signup() {
                   type="text"
                   className="form-control auth-input"
                   placeholder="Enter your lastname"
+                  name="lastName"
+                  onChange={handleChangeText}
                 />
               </div>
               <div className="input-group flex-nowrap">
@@ -74,6 +102,8 @@ export default function Signup() {
                   type="email"
                   className="form-control auth-input"
                   placeholder="Enter Your E-mail"
+                  name="email"
+                  onChange={handleChangeText}
                 />
               </div>
               <div className="input-group flex-nowrap">
@@ -84,10 +114,12 @@ export default function Signup() {
                   type="password"
                   className="form-control auth-input"
                   placeholder="Create your password"
+                  name="password"
+                  onChange={handleChangeText}
                 />
               </div>
               <div className="d-grid">
-                <button className="btn btn-primary auth-btn">Login</button>
+                <button type="buttob" className="btn btn-primary auth-btn" onClick={handleSubmit}>Signup</button>
               </div>
               <div className="text-center">
                 <p className="auth-right-last">
