@@ -21,7 +21,7 @@ export default function PersonalInformation() {
               </div>
               <div className="shadow-sm py-3 px-3">
                 <p className="profile-personal-chart">Last Name</p>
-                <span className="profile-personal-value">Chandler</span>
+                <span className="profile-personal-value">Chandlerrrr</span>
               </div>
               <div className="shadow-sm py-3 px-3">
                 <p className="profile-personal-chart">Verified E-mail</p>
