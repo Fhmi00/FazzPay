@@ -5,7 +5,6 @@ import Side from "components/side";
 import Footer from "components/footer";
 import currency from "utils/currency";
 import Cookies from "js-cookie";
-import { useRouter } from "next/router";
 import axios from "utils/axios"
 import HandleChart from "components/chart";
 import { FiArrowDown, FiArrowUp, FiPlus } from "react-icons/fi";

@@ -17,13 +17,16 @@ export default function Login() {
   const handleSubmit = async () => {
     try {
       const result = await axiosClient.post("/auth/login", form);
-       dispatch(getDataUser(result.data.data.id));
-      // menjalankan get user by id dan menyimpan datanya ke redux
-      Cookies.set("token", result.data.data.token);
-      Cookies.set("userId", result.data.data.id);
-      //   proses kondisi pengecekan pin jika ada akan diarahkan ke home jika tidak ada akan diarahkan ke create pin
-      router.push("/dashboard");
-      console.log(userId);
+      const {id, pin, token} = result.data.data;
+      Cookies.set("token", token);
+      Cookies.set("userId", id);
+      dispatch(getDataUser(id));
+      if (pin) {
+        router.push("/dashboard");
+      } else {
+        router.push("/create-pin");
+      }      
+      console.log(id);
     } catch (error) {
       console.log(error);
     }
