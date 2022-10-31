@@ -49,6 +49,7 @@ export default function Side() {
       setIsLoading(false);
       setFormTopup({ amount: "" });
       alert("top up success")
+      router.reload();
     } catch (error) {
       console.log(error);
       setIsLoading(false);

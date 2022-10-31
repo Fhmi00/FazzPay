@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+// import Image from "next/image";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import Header from "components/header";
@@ -8,14 +8,14 @@ import Side from "components/side";
 import ReceiverCard from "components/transfer/receiverCard";
 import { FiSearch } from "react-icons/fi";
 import { getAllUser } from "stores/actions/user";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { useEffect } from "react";
 
 export default function SelectReceiver() {
   // const data = useSelector((state) => state.data);
   const dispatch = useDispatch();
-  const [data, setData] = useState();
+  const [data, setData] = useState([]);
 
   const getData = () => {
     try {

@@ -3,12 +3,45 @@ import Image from "next/image";
 import Header from "components/header";
 import Side from "components/side";
 import Footer from "components/footer";
+import currency from "utils/currency";
+import Cookies from "js-cookie";
+import { useRouter } from "next/router";
+import axios from "utils/axios"
 import HandleChart from "components/chart";
 import { FiArrowDown, FiArrowUp, FiPlus } from "react-icons/fi";
+import { useState } from "react";
+import { useEffect } from "react";
 
 
 export default function Dashboard() {
-  
+  const [data, setData] = useState();
+  const [history, setHistory] = useState([]);
+
+  const getUserById = async () => {
+    try {
+      const result = await axios.get(`/user/profile/${Cookies.get('userId')}`)
+      setData(result.data.data)
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  const getHistory = async () => {
+    try {
+      const result = await axios.get(`https://fazzpay-rose.vercel.app/transaction/history?page=1&limit=5&filter=MONTH`)
+      setHistory(result.data.data)
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+    getHistory();
+  }, {})
+
+  useEffect(() => {
+    getUserById();
+  }, []);
  
   return (
     <>
@@ -21,8 +54,8 @@ export default function Dashboard() {
               <div className="d-flex flex-column gap-3">
                 <>                
                 <span className="dashboard-balance-balance">Balance</span>
-                <span className="dashboard-balance-amount">10</span>
-                <span className="dashboard-balance-telpnumb">+62123654789</span>
+                <span className="dashboard-balance-amount">{currency.format(data?.balance)}</span>
+                <span className="dashboard-balance-telpnumb">{data?.noTelp}</span>
                 </>
               </div>
               <div className="d-flex flex-column gap-3">
@@ -54,7 +87,10 @@ export default function Dashboard() {
               </section>
               <section className="col-5 ms-5 shadow ps-5 py-4 dashboard-history-wrapper">
                 <span className="dashboard-history">Transaction History</span>
-                <div className="d-flex flex-row justify-content-between align-items-center me-5 mt-4">
+
+                {history.length > 0 ? (
+                  history.map((value, index) => (
+                    <div className="d-flex flex-row justify-content-between align-items-center me-5 mt-4" key={index}>
                   <div className="d-flex gap-3">
                     <Image
                       src="/robert.png"
@@ -64,13 +100,20 @@ export default function Dashboard() {
                     ></Image>
                     <div className="d-flex flex-column gap-2">
                       <span className="dashboard-transaction-name">
-                        Robert Chandler
+                        {value.firstName}
                       </span>
-                      <span className="dashboard-transaction-type">accept</span>
+                      <span className="dashboard-transaction-type">{value.type}</span>
                     </div>
                   </div>
-                  <span>+Rp50.000</span>
+                  <span>{currency.format(value.amount)}</span>
                 </div>
+                  ))
+                ) : (
+                  <div>
+                    <span>You Dont Have Any Transactions</span>
+                  </div>
+                )}
+
               </section>
             </div>
           </div>
