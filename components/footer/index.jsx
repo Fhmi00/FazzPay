@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <div className="container-fluid mt-5">
+    <div className="container-fluid mt-4">
       <div className="row">
         <div className="col-12 border mt-5 px-5 py-4 d-flex justify-content-between footer-wrapper">
           <span className="ms-5 footer-copyright">

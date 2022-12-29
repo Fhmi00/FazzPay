@@ -314,5 +314,9 @@ a {
   color: #7a7886;
 }
 
+.dashboard-graph-wrapper {
+  border-radius: 15px;
+}
+
 @media (prefers-color-scheme: dark) {
 }

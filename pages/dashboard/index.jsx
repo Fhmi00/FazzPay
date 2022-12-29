@@ -29,7 +29,7 @@ export default function Dashboard() {
               </div>
             </section>
             <div className="d-flex mt-4">
-              <section className="col-6 me-5 shadow px-5 py-4">
+              <section className="col-6 me-5 shadow px-5 py-4 dashboard-graph-wrapper">
                 <div className="d-flex flex-row justify-content-between">
                   <div className="d-flex flex-column gap-2">
                     <FiArrowDown className="dashboard-logo-income" />
@@ -51,7 +51,7 @@ export default function Dashboard() {
                   />
                 </div>
               </section>
-              <section className="col-5 ms-5 shadow ps-5 py-4">
+              <section className="col-5 ms-5 shadow ps-5 py-4 dashboard-graph-wrapper">
                 <span className="dashboard-history">Transaction History</span>
                 <div className="d-flex flex-row justify-content-between align-items-center me-5 mt-4">
                   <div className="d-flex gap-3">
