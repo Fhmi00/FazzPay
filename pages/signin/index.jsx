@@ -1,9 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
+import axiosClient from "utils/axios";
+import Cookies from "js-cookie";
+import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
 import { FiMail, FiLock } from "react-icons/fi";
+import { useDispatch } from "react-redux";
+
+import { getDataUser } from "stores/actions/user";
 
 export default function Login() {
+  const dispatch = useDispatch();
+  const router = useRouter();
+  const [form, setForm] = useState({});
+
+  const handleSubmit = async () => {
+    try {
+      const result = await axiosClient.post("/auth/login", form);
+      const {id, pin, token} = result.data.data;
+      Cookies.set("token", token);
+      Cookies.set("userId", id);
+      dispatch(getDataUser(id));
+      if (pin) {
+        router.push("/dashboard");
+      } else {
+        router.push("/create-pin");
+      }      
+      console.log(id);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleChangeText = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
   return (
     <>
       <div className="container-fluid">
@@ -51,9 +83,11 @@ export default function Login() {
                   <FiMail />
                 </span>
                 <input
-                  type="email"
-                  className="form-control auth-input"
-                  placeholder="Enter Your E-mail"
+            type="email"
+            className="form-control auth-input"
+            name="email"
+            placeholder="Input email ..."
+            onChange={handleChangeText}
                 />
               </div>
               <div className="input-group flex-nowrap">
@@ -61,18 +95,24 @@ export default function Login() {
                   <FiLock />
                 </span>
                 <input
-                  type="password"
-                  className="form-control auth-input"
-                  placeholder="Enter Your Password"
+            type="password"
+            className="form-control auth-input"
+            name="password"
+            placeholder="Input password ..."
+            onChange={handleChangeText}
                 />
               </div>
               <p className="text-end auth-right-forgot">
                 <Link href="/">Forgot password?</Link>
               </p>
               <div className="d-grid">
-                <button className="btn btn-primary auth-btn">
-                  <Link href="/create-pin">Login</Link>{" "}
-                </button>
+              <button
+            type="button"
+            className="btn btn-primary auth-btn"
+            onClick={handleSubmit}
+          >
+            Login
+          </button>
               </div>
               <div className="text-center">
                 <p className="auth-right-last">

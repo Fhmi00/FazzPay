@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import AuthPin from "components/authPin";
 
 export default function CreatePin() {
   return (
@@ -45,7 +46,8 @@ export default function CreatePin() {
                   of that for you!
                 </span>
               </div>
-              <div className="d-flex flex-row gap-3 fw-input-pin">
+              <AuthPin/>
+              {/* <div className="d-flex flex-row gap-3 fw-input-pin">
                 <div className="d-flex align-items-center auth-pin-wrapper">
                   <input maxlength="1" type="text" className="auth-input-pin" />
                 </div>
@@ -64,10 +66,7 @@ export default function CreatePin() {
                 <div className="d-flex align-items-center auth-pin-wrapper">
                   <input maxlength="1" type="text" className="auth-input-pin" />
                 </div>
-              </div>
-              <button className="btn auth-btn-pin">
-                <Link href="/dashboard">Confirm</Link>{" "}
-              </button>
+              </div> */}
             </div>
           </section>
         </div>
