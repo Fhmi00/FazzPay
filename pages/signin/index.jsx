@@ -17,7 +17,7 @@ export default function Login() {
   const handleSubmit = async () => {
     try {
       const result = await axiosClient.post("/auth/login", form);
-      const {id, pin, token} = result.data.data;
+      const { id, pin, token } = result.data.data;
       Cookies.set("token", token);
       Cookies.set("userId", id);
       dispatch(getDataUser(id));
@@ -25,10 +25,10 @@ export default function Login() {
         router.push("/dashboard");
       } else {
         router.push("/create-pin");
-      }      
-      console.log(id);
+      }
+      alert(result.data.msg);
     } catch (error) {
-      console.log(error);
+      alert(error.response.data.msg);
     }
   };
 
@@ -83,11 +83,11 @@ export default function Login() {
                   <FiMail />
                 </span>
                 <input
-            type="email"
-            className="form-control auth-input"
-            name="email"
-            placeholder="Input email ..."
-            onChange={handleChangeText}
+                  type="email"
+                  className="form-control auth-input"
+                  name="email"
+                  placeholder="Input email ..."
+                  onChange={handleChangeText}
                 />
               </div>
               <div className="input-group flex-nowrap">
@@ -95,24 +95,24 @@ export default function Login() {
                   <FiLock />
                 </span>
                 <input
-            type="password"
-            className="form-control auth-input"
-            name="password"
-            placeholder="Input password ..."
-            onChange={handleChangeText}
+                  type="password"
+                  className="form-control auth-input"
+                  name="password"
+                  placeholder="Input password ..."
+                  onChange={handleChangeText}
                 />
               </div>
               <p className="text-end auth-right-forgot">
                 <Link href="/">Forgot password?</Link>
               </p>
               <div className="d-grid">
-              <button
-            type="button"
-            className="btn btn-primary auth-btn"
-            onClick={handleSubmit}
-          >
-            Login
-          </button>
+                <button
+                  type="button"
+                  className="btn btn-primary auth-btn"
+                  onClick={handleSubmit}
+                >
+                  Login
+                </button>
               </div>
               <div className="text-center">
                 <p className="auth-right-last">
