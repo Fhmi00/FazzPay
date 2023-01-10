@@ -56,8 +56,7 @@ const Confirmation = () => {
           .then((res) => {
             console.log(res.value);
             alert("Success Transfer");
-            router.reload();
-            router.push("/history");
+            router.push("/dashboard");
           })
           .catch((err) => {
             console.log(err);
@@ -75,100 +74,6 @@ const Confirmation = () => {
         <div className="row ms-5">
           <Side />
           <div className="col-8 shadow ms-5 ps-5 py-4">
-            <div
-              className="modal fade"
-              id="exampleModalCenter"
-              tabindex="-1"
-              role="dialog"
-              aria-labelledby="exampleModalCenterTitle"
-              aria-hidden="true"
-            >
-              <div
-                className="modal-dialog modal-dialog-centered"
-                role="document"
-              >
-                <div className="modal-content">
-                  <div
-                    className="modal-header d-flex align-items-start"
-                    style={{ borderBottom: "none" }}
-                  >
-                    <div className="d-flex flex-column">
-                      <p className="" id="staticBackdropLabel">
-                        Enter PIN to transfer
-                      </p>
-                      <p>
-                        Enter your 6 digits PIN for confirmation to continue
-                        transferring money.{" "}
-                      </p>
-                    </div>
-                    <button
-                      type="button"
-                      className="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    >
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div className="modal-body">
-                    {" "}
-                    <div className="d-flex gap-4 justify-content-start">
-                      <form onSubmit={handlePin}>
-                        <div className="d-flex gap-4 justify-content-start">
-                          {[1, 2, 3, 4, 5, 6].map((item) => (
-                            <div key={item}>
-                              <input
-                                type="text"
-                                maxLength="1"
-                                autoComplete="off"
-                                className="form-control text-center"
-                                style={{ width: "58px", height: "55px" }}
-                                tabIndex={item}
-                                id={`pin${item}`}
-                                value={pin[`pin${item}`]}
-                                onChange={handleChange}
-                                onKeyUp={inputFocus}
-                              />
-                            </div>
-                          ))}
-                        </div>
-                        <button
-                          type="submit"
-                          className={`mt-5 btn ${
-                            !pin.pin1 ||
-                            !pin.pin2 ||
-                            !pin.pin3 ||
-                            !pin.pin4 ||
-                            !pin.pin5 ||
-                            !pin.pin6
-                              ? styles.buttonDisabled
-                              : "btn-primary"
-                          }`}
-                          disabled={
-                            !pin.pin1 ||
-                            !pin.pin2 ||
-                            !pin.pin3 ||
-                            !pin.pin4 ||
-                            !pin.pin5 ||
-                            !pin.pin6
-                          }
-                        >
-                          Submit
-                        </button>
-                        <button
-                          type="button"
-                          className="btn btn-secondary"
-                          data-bs-dismiss="modal"
-                        >
-                          Cancel
-                        </button>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
             {/* <!-- Modal --> */}
             <div
               className="modal fade"
