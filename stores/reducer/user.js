@@ -170,6 +170,54 @@ const user = (state = initialState, action) => {
         isError: true,
         errorMessage: action.payload.response.data.msg,
       };
+    case "CHECK_PIN_USER_PENDING": {
+      return {
+        ...state,
+        isLoading: true,
+        data: {},
+      };
+    }
+    case "CHECK_PIN_USER_FULFILLED": {
+      return {
+        ...state,
+        isLoading: false,
+        data: action.payload.data.data,
+        message: action.payload.data.msg,
+      };
+    }
+    case "CHECK_PIN_USER_REJECTED": {
+      return {
+        ...state,
+        data: {},
+        isError: true,
+        isLoading: false,
+        message: action.payload.response.data.msg,
+      };
+    }
+    case "CHANGE_PIN_USER_PENDING": {
+      return {
+        ...state,
+        isLoading: true,
+        data: {},
+      };
+    }
+    case "CHANGE_PIN_USER_FULFILLED": {
+      return {
+        ...state,
+        isLoading: false,
+        data: action.payload.data.data,
+        message: action.payload.data.msg,
+      };
+    }
+    case "CHANGE_PIN_USER_REJECTED": {
+      return {
+        ...state,
+        data: {},
+        isError: true,
+        isLoading: false,
+        message: action.payload.response.data.msg,
+      };
+    }
 
     default: {
       return state;

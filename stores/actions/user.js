@@ -48,3 +48,17 @@ export const updatePassword = (id, data) => {
     payload: axios.patch(`/user/password/${id}`, data),
   };
 };
+
+export const checkPin = (id) => {
+  return {
+    type: "CHECK_PIN_USER",
+    payload: axios.get(`/user/pin/${id}`),
+  };
+};
+
+export const changePin = (id, data) => {
+  return {
+    type: "CHANGE_PIN_USER",
+    payload: axios.patch(`/user/pin/${id}`, data),
+  };
+};
