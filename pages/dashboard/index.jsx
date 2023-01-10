@@ -95,7 +95,12 @@ export default function Dashboard() {
                 </div>
               </section>
               <section className="col-5 ms-5 shadow ps-5 py-4 dashboard-history-wrapper">
-                <span className="dashboard-history">Transaction History</span>
+                <span
+                  className="dashboard-history"
+                  onClick={() => router.push("/history")}
+                >
+                  Transaction History
+                </span>
 
                 {history.length > 0 ? (
                   history.map((value, index) => (

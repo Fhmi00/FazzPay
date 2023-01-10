@@ -183,6 +183,23 @@ a {
   color: rgba(58, 61, 66, 0.9);
 }
 
+.containerImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+}
+
+.containerNotif {
+  position: absolute !important;
+  bottom: -630px !important;
+  right: 0 !important;
+  height: auto !important;
+  background: white !important;
+  width: 300px !important;
+  height: 600px !important;
+  z-index: 999 !important;
+}
+
 /* END OF HEADER */
 
 /* START OF SIDE BAR */
@@ -504,6 +521,18 @@ a {
 .buttonUnDisabled {
   background: #6379f4 !important;
   color: white !important;
+}
+
+/* HISTORY */
+
+.containerImage {
+  width: 70px;
+  height: 70px;
+}
+
+.containerHistory {
+  background: red;
+  border-radius: 20px;
 }
 
 @media (prefers-color-scheme: dark) {
