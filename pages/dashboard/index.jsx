@@ -10,10 +10,12 @@ import HandleChart from "components/chart";
 import { FiArrowDown, FiArrowUp, FiPlus } from "react-icons/fi";
 import { useState } from "react";
 import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 export default function Dashboard() {
   const [data, setData] = useState();
   const [history, setHistory] = useState([]);
+  const router = useRouter();
 
   const getUserById = async () => {
     try {
@@ -63,7 +65,10 @@ export default function Dashboard() {
                 </>
               </div>
               <div className="d-flex flex-column gap-3">
-                <button className="btn text-light px-4 py-2 btn-dashboard-balance">
+                <button
+                  className="btn text-light px-4 py-2 btn-dashboard-balance"
+                  onClick={() => router.push("/transfer")}
+                >
                   <FiArrowUp /> Transfer
                 </button>
                 <button className="btn text-light px-4 py-2 btn-dashboard-balance">

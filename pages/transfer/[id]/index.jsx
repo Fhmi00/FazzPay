@@ -46,6 +46,8 @@ const InputAmount = (props) => {
     }
   };
 
+  console.log(props.detailUser.image);
+
   return (
     <>
       <Header />
@@ -117,7 +119,7 @@ const InputAmount = (props) => {
             <div className="text-end mt-5 me-5 mb-3">
               <button
                 className="btn btn-primary auth-btn"
-                onClick={handleChange}
+                onClick={handleNavigate}
               >
                 Continue
               </button>
