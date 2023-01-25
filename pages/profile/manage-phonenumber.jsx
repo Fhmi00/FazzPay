@@ -68,7 +68,7 @@ export default function EditPhoneNumber() {
                     >
                       {user.isLoading ? (
                         <div className="spinner-border" role="status">
-                          <span className="sr-only">Loading...</span>
+                          <span className="sr-only"></span>
                         </div>
                       ) : (
                         <>Edit Phone Number</>

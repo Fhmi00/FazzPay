@@ -66,6 +66,7 @@ export default function Menu() {
     e.preventDefault();
     dispatch(changeProfile(Cookies.get("userId"), form)).then((res) => {
       alert(res.value.data.msg);
+      window.location.reload();
     });
   };
 
