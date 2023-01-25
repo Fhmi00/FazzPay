@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 
 export default function LandingPage() {
-  const navigate = useRouter();
+  const router = useRouter();
   // const user = useSelector((state) => state.user.data);
   const [testi, setTesti] = useState(0);
   const logos = [
@@ -108,13 +108,13 @@ export default function LandingPage() {
           <div>
             <button
               className="btn btn-outline-light px-4 me-3"
-              onClick={() => navigate("/signin")}
+              onClick={() => router.push("/signin")}
             >
               Login
             </button>
             <button
               className="btn btn-light text-primary px-3"
-              onClick={() => navigate("/signup")}
+              onClick={() => router.push("/signup")}
             >
               Sign Up
             </button>
