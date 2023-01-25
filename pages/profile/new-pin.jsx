@@ -59,7 +59,6 @@ export default function NewPin() {
         router.push("/profile/menu");
       })
       .catch((err) => {
-        console.log(err);
         alert(err.response.data.msg);
       });
   };

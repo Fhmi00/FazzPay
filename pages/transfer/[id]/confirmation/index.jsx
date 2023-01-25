@@ -54,12 +54,11 @@ const Confirmation = () => {
             notes: router.query.notes,
           })
           .then((res) => {
-            console.log(res.value);
             alert("Success Transfer");
             router.push("/dashboard");
           })
           .catch((err) => {
-            console.log(err);
+            alert(err);
           });
       })
       .catch((err) => {

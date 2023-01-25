@@ -27,8 +27,6 @@ export default function Menu() {
   const [updateImage, setUpdateImage] = useState({ image: "" });
   const router = useRouter();
 
-  console.log(user.data);
-
   useEffect(() => {
     dispatch(getDataUser(Cookies.get("userId")));
   }, []);
@@ -47,7 +45,7 @@ export default function Menu() {
         alert(res.value.data.msg);
         window.location.reload();
       })
-      .catch((e) => console.log(e));
+      .catch((e) => alert(e));
   };
 
   const handleChangeForm = (e) => {

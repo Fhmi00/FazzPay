@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 function DetailUser() {
   const router = useRouter();
   const { id } = router.query;
-  console.log(router);
+  alert(router);
   return (
     <div>
       <h1>DetailUser</h1>

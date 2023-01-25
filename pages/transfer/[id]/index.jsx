@@ -46,8 +46,6 @@ const InputAmount = (props) => {
     }
   };
 
-  console.log(props.detailUser.image);
-
   return (
     <>
       <Header />

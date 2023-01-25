@@ -41,51 +41,61 @@ export default function AuthPin() {
       e.preventDefault();
       let allPin = "";
       for (const item in pin) {
-      allPin += pin[item];
+        allPin += pin[item];
       }
-      await axios.patch(`/user/pin/${userId}`, {pin: allPin});
+      await axios.patch(`/user/pin/${userId}`, { pin: allPin });
       setCreatePin(true);
     } catch (error) {
-      console.log(error);
+      alert(error);
     }
-    
   };
 
   return (
     <div className="text-center container">
-      {createPin? (
-      <form onSubmit={handleSubmit}>
-        <div className="d-flex gap-2 justify-content-center">
-          {[1, 2, 3, 4, 5, 6].map((item) => (
-            <div key={item}>
-              <input
-                type="text"
-                maxLength="1"
-                autoComplete="off"
-                className="form-control text-center"
-                style={{ width: "40px" }}
-                tabIndex={item}
-                id={`pin${item}`}
-                value={pin[`pin${item}`]}
-                onChange={handleChange}
-                onKeyUp={inputFocus}
-              />
-            </div>
-          ))}
-        </div>
-        <div className="d-grid my-4">
-          <button type="submit" className="btn btn-primary auth-btn">
-            Submit
-          </button>
-        </div>
-      </form>
+      {createPin ? (
+        <form onSubmit={handleSubmit}>
+          <div className="d-flex gap-2 justify-content-center">
+            {[1, 2, 3, 4, 5, 6].map((item) => (
+              <div key={item}>
+                <input
+                  type="text"
+                  maxLength="1"
+                  autoComplete="off"
+                  className="form-control text-center"
+                  style={{ width: "40px" }}
+                  tabIndex={item}
+                  id={`pin${item}`}
+                  value={pin[`pin${item}`]}
+                  onChange={handleChange}
+                  onKeyUp={inputFocus}
+                />
+              </div>
+            ))}
+          </div>
+          <div className="d-grid my-4">
+            <button type="submit" className="btn btn-primary auth-btn">
+              Submit
+            </button>
+          </div>
+        </form>
       ) : (
         <div>
-          <span className="auth-left-first">Your PIN Was Successfully Created</span>
+          <span className="auth-left-first">
+            Your PIN Was Successfully Created
+          </span>
           <br />
-          <span className="auth-left-second">Your PIN was successfully created and you can now access all the features in FazzPay.</span>
+          <span className="auth-left-second">
+            Your PIN was successfully created and you can now access all the
+            features in FazzPay.
+          </span>
           <div className="d-grid my-4">
-            <button type="submit" className="btn btn-primary auth-btn" onClick={() => router.push("/dashboard")}>continue</button>
+            <button
+              type="submit"
+              className="btn btn-primary auth-btn"
+              onClick={() => router.push("/dashboard")}
+            >
+              continue
+            </button>
           </div>
         </div>
       )}

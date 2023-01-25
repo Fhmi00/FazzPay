@@ -23,7 +23,7 @@ export default function EditPhoneNumber() {
       })
       .catch((err) => {
         // alert(err.response.data.msg);
-        console.log(err);
+        alert(err);
       });
   };
 

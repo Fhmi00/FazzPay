@@ -16,9 +16,8 @@ export default function Signin() {
       Cookies.set("userId", result.data.data.id);
       //   proses kondisi pengecekan pin jika ada akan diarahkan ke home jika tidak ada akan diarahkan ke create pin
       router.push("/home");
-      console.log(result);
     } catch (error) {
-      console.log(error);
+      alert(error);
     }
   };
 

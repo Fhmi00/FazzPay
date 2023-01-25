@@ -23,7 +23,7 @@ export default function Header() {
       );
       setData(result.data.data);
     } catch (error) {
-      console.log(error);
+      alert(error);
     }
   };
 
@@ -34,7 +34,7 @@ export default function Header() {
       );
       setUser(result.data);
     } catch (error) {
-      console.log(error);
+      alert(error);
     }
   };
 

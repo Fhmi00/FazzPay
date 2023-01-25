@@ -25,7 +25,6 @@ export default function Side() {
   const handleChangeTopupForm = (e) => {
     setFormTopup({ ...formTopup, amount: e.target.value });
   };
-  console.log(formTopup);
 
   const logout = async (e) => {
     e.preventDefault();
@@ -51,7 +50,6 @@ export default function Side() {
       alert("top up success");
       router.reload();
     } catch (error) {
-      console.log(error);
       setIsLoading(false);
       alert("failed");
     }

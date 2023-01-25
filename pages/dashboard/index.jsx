@@ -22,7 +22,7 @@ export default function Dashboard() {
       const result = await axios.get(`/user/profile/${Cookies.get("userId")}`);
       setData(result.data.data);
     } catch (error) {
-      console.log(error);
+      alert(error);
     }
   };
 
@@ -33,7 +33,7 @@ export default function Dashboard() {
       );
       setHistory(result.data.data);
     } catch (error) {
-      console.log(error);
+      alert(error);
     }
   };
 

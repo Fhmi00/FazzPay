@@ -9,10 +9,10 @@ import { FiMail, FiLock, FiUser } from "react-icons/fi";
 export default function Signup() {
   const router = useRouter();
   const [form, setForm] = useState({
-    firstName : "",
-    lastName : "",
-    email : "",
-    password : "",
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
   });
 
   const handleSubmit = async () => {
@@ -21,9 +21,8 @@ export default function Signup() {
       Cookies.set("token", result.data.data.token);
       Cookies.set("userId", result.data.data.id);
       router.push("/signin");
-      console.log(result);
     } catch (error) {
-      console.log(error);
+      alert(error);
     }
   };
 
@@ -122,7 +121,13 @@ export default function Signup() {
                 />
               </div>
               <div className="d-grid">
-                <button type="buttob" className="btn btn-primary auth-btn" onClick={handleSubmit}>Signup</button>
+                <button
+                  type="buttob"
+                  className="btn btn-primary auth-btn"
+                  onClick={handleSubmit}
+                >
+                  Signup
+                </button>
               </div>
               <div className="text-center">
                 <p className="auth-right-last">
