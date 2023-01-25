@@ -1,11 +1,8 @@
 import React, { useState } from "react";
-import heroImg from "../public/hero-img.png";
 import microsoftLogo from "../public/microsoft.png";
 import hnmLogo from "../public/hnm.png";
 import airbnbLogo from "../public/airbnb.png";
 import dropboxLogo from "../public/dropbox.png";
-import feature1 from "../public/feature-img-1.png";
-import feature2 from "../public/feature-img-2.png";
 import { useRouter } from "next/router";
 import Image from "next/image";
 
@@ -296,7 +293,7 @@ export default function LandingPage() {
               </div>
               <div className="bg-white rounded shadow py-4 px-2 p-md-5 mx-3 mx-md-5">
                 <div className="mb-3">
-                  <Image
+                  <img
                     src={`https://i.pravatar.cc/400?img=${testimonials[testi].avatar}`}
                     alt="user avatar"
                     className="rounded"
