@@ -731,11 +731,6 @@ input[type="number"] {
   font-size: 48px;
 }
 
-.feature-section {
-  /* height: 100vh; */
-  /* max-height: 700px; */
-}
-
 .feature-right-side > span {
   display: none !important;
 }
