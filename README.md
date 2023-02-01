@@ -1,4 +1,4 @@
-# Invinity Event Organizer Web App
+# Fazzpay
 
 <p align='center'>
 
@@ -11,9 +11,7 @@
 
 ## 📝 Introduction
 
-This web app is a simple event organizer that allows you to create, edit and delete events. You can also book events and manage your bookings.
-As admin you can add, edit and delete events. As user you can book events and manage your bookings. The app has integrated authentication and authorization.
-As payment method, it has integrated with seemingly secure payment method, Midtrans.
+Fazzpay is an application that focussing in banking needs for all users in the world. You can top up your balance via e-banking or tranfer to your friends in easy way
 
 ## 🔧 Built with
 
