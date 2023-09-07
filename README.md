@@ -2,7 +2,7 @@
 
 <p align='center'>
 
-[Application Demo](https://fazzpay-nextjs-beige.vercel.app/) |
+[Application Demo](https://fazz-pay-seven.vercel.app/) |
 [Author Profile](https://github.com/Fhmi00)
 
 ![App Screenshot](./public/fazzpay1.png)
@@ -12,6 +12,10 @@
 ## 📝 Introduction
 
 Fazzpay is an application that focussing in banking needs for all users in the world. You can top up your balance via e-banking or tranfer to your friends in easy way
+
+Test Account
+email : ifahmi5555@gmail.com
+password : 1234
 
 ## 🔧 Built with
 
@@ -35,4 +39,4 @@ Fazzpay is an application that focussing in banking needs for all users in the w
 
 ## 🙋‍♂️ Author
 
-© [Muhammad Anisul Fahmi](https://github.com/Fhmi00) 2022
+© [Muhammad Anisul Fahmi](https://github.com/Fhmi00) 2023
