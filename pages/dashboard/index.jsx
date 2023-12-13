@@ -124,7 +124,11 @@ export default function Dashboard() {
                           </span>
                         </div>
                       </div>
-                      <span>{currency.format(value.amount)}</span>
+                      <span>
+                        {value
+                          ? currency.format(value.amount)
+                          : currency.format(0)}
+                      </span>
                     </div>
                   ))
                 ) : (
