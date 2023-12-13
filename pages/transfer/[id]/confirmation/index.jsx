@@ -54,6 +54,7 @@ const Confirmation = () => {
             notes: router.query.notes,
           })
           .then((res) => {
+            document.getElementsByClassName("btn-close")[0].click();
             alert("Success Transfer");
             router.push("/dashboard");
           })
