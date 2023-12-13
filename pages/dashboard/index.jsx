@@ -57,7 +57,7 @@ export default function Dashboard() {
                 <>
                   <span className="dashboard-balance-balance">Balance</span>
                   <span className="dashboard-balance-amount">
-                    {currency.format(data?.balance)}
+                    {data ? currency.format(data?.balance) : currency.format(0)}
                   </span>
                   <span className="dashboard-balance-telpnumb">
                     {data?.noTelp}
